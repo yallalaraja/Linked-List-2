@@ -1,0 +1,22 @@
+public class Solution{
+    static int index = 0;
+    public static int findNodeRec(LinkedListNode<Integer> head,int n){
+        if(head == null){
+            return -1;
+        }
+        if (head.data == n) {
+            return 0;
+        }
+        // if(head.next.equals(n)){
+        //     return 0;
+        // }
+        index++;
+        int found = findNodeRec(head.next, n);
+        if(found >= 0){
+            return index;
+        }
+        else {
+            return -1;
+        }
+    }
+}
